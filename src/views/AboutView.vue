@@ -16,40 +16,40 @@ import Message from '../components/Message.vue'
 </template>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+hr {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
+}
+
+.option {
+  width: 50%;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .option {
+    width: 100%;
   }
 
   hr {
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
   }
-
-  .options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    gap: 0.5rem;
-  }
-
-  .option {
-    width: 50%;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-  }
-
-  @media (max-width: 1024px) {
-    .option {
-      width: 100%;
-    }
-
-    hr {
-      width: 100%;
-    }
-  }
+}
 </style>
