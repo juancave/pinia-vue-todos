@@ -27,7 +27,7 @@ const onUpdateTodo = () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="item-container">
     <input v-model="isChecked" @change="onUpdateTodo" type="checkbox" />
     <span class="name" :class="{ completed: todo.status === Status.completed }">{{
       todo.text
@@ -37,7 +37,7 @@ const onUpdateTodo = () => {
 </template>
 
 <style scoped>
-.container {
+.item-container {
   display: flex;
   justify-content: space-between;
   align-items: center;

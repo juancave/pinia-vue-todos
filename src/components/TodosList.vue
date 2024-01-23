@@ -18,7 +18,7 @@ const onDeleteTodo = (todo: Todo) => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="list-container">
     <TransitionGroup name="list">
       <div :key="todo.id" v-for="(todo, index) in todos">
         <TodoItem
@@ -34,8 +34,11 @@ const onDeleteTodo = (todo: Todo) => {
 </template>
 
 <style scoped>
-.container {
-  text-align: center;
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .list-enter-active,

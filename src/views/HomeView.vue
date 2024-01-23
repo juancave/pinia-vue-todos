@@ -31,6 +31,6 @@ const handleUpdateTodo = (todo: Todo) => {
   <div class="container">
     <AddTodo @addTodo="handleAddTodo" />
     <TodosList :todos="todos" @deleteTodo="handleDeleteTodo" @updateFilters="handleUpdateFilters" @updateTodo="handleUpdateTodo" />
-    <TodoFilters :counter="todos.length" @updateFilter="handleUpdateFilters" />
+    <TodoFilters v-if="todos.length" :counter="todos.length" @updateFilter="handleUpdateFilters" />
   </div>
 </template>
