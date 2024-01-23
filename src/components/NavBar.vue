@@ -1,6 +1,6 @@
 <template>
-  <div className='container'>
-    <div className='options-container'>
+  <div className="container">
+    <div className="options-container">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" />
       <div class="separator"></div>
       <nav class="nav">
@@ -10,11 +10,11 @@
       </nav>
     </div>
   </div>
- </template>
- 
+</template>
+
 <style scoped>
- .container {
-  background-color: #F6F8FA;
+.container {
+  background-color: #f6f8fa;
   padding: 0.8rem;
   display: flex;
   justify-content: space-between;
@@ -53,17 +53,16 @@
 .logo {
   width: 40px;
 }
- 
- @media (max-width: 480px) {
+
+@media (max-width: 480px) {
   .nav {
     gap: 1rem;
   }
- }
+}
 
- @media (max-width: 320px) {
+@media (max-width: 320px) {
   .nav {
     gap: 0;
   }
- }
+}
 </style>
- 
