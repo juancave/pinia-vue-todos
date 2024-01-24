@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { Status } from '../interfaces/Todo'
+
+import { storeToRefs } from 'pinia'
+import { useFilters } from '../stores/filters'
 
 defineProps<{
   counter: number
 }>()
 
-const emit = defineEmits<{
-  updateFilter: []
-}>()
+const filtersStore = useFilters()
+const { filter } = storeToRefs(filtersStore)
 
-const filter = ref('')
 </script>
 
 <template>
@@ -21,9 +22,9 @@ const filter = ref('')
         <input
           v-model="filter"
           type="radio"
-          value=""
+          value="all"
           name="filter"
-          @change="emit('updateFilter')"
+          @change="filtersStore.updateFilter('all')"
         />
       </label>
       <label>
@@ -31,9 +32,9 @@ const filter = ref('')
         <input
           v-model="filter"
           type="radio"
-          value="completed"
+          :value="Status.completed"
           name="filter"
-          @change="emit('updateFilter')"
+          @change="filtersStore.updateFilter(Status.completed)"
         />
       </label>
       <label>
@@ -41,9 +42,9 @@ const filter = ref('')
         <input
           v-model="filter"
           type="radio"
-          value="toDo"
+          :value="Status.created"
           name="filter"
-          @change="emit('updateFilter')"
+          @change="filtersStore.updateFilter(Status.created)"
         />
       </label>
     </div>

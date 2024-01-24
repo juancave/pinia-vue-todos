@@ -11,7 +11,6 @@ const isChecked = ref(props.todo.status === Status.completed)
 
 const emit = defineEmits<{
   deleteTodo: [todo: Todo]
-  updateFilters: [],
   updateTodo: [todo: Todo]
 }>()
 
@@ -22,7 +21,6 @@ const onDeleteTodo = () => {
 const onUpdateTodo = () => {
   const updated = { ...props.todo, status: isChecked.value ? Status.completed : Status.in_progress }
   emit('updateTodo', updated)
-  emit('updateFilters')
 }
 </script>
 

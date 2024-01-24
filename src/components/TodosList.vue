@@ -8,7 +8,6 @@ defineProps<{
 
 const emit = defineEmits<{
   deleteTodo: [todo: Todo]
-  updateFilters: []
   updateTodo: [todo: Todo]
 }>()
 
@@ -25,7 +24,6 @@ const onDeleteTodo = (todo: Todo) => {
           :key="index"
           :todo="todo"
           @deleteTodo="onDeleteTodo"
-          @updateFilters="emit('updateFilters')"
           @updateTodo="(todo) => emit('updateTodo', todo)"
         />
       </div>

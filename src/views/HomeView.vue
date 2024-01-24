@@ -8,14 +8,10 @@ import { storeToRefs } from 'pinia'
 import { useTodos } from '../stores/todo'
 
 const todosStore = useTodos()
-const { todos } = storeToRefs(todosStore);
+const { todos, filteredTodos } = storeToRefs(todosStore)
 
 const handleDeleteTodo = (todo: Todo) => {
   todosStore.deleteTodo(todo)
-}
-
-const handleUpdateFilters = () => {
-  console.log('Filters.', todos)
 }
 
 const handleAddTodo = (text: string) => {
@@ -25,12 +21,13 @@ const handleAddTodo = (text: string) => {
 const handleUpdateTodo = (todo: Todo) => {
   todosStore.updateTodo(todo)
 }
+
 </script>
 
 <template>
   <div class="container">
     <AddTodo @addTodo="handleAddTodo" />
-    <TodosList :todos="todos" @deleteTodo="handleDeleteTodo" @updateFilters="handleUpdateFilters" @updateTodo="handleUpdateTodo" />
-    <TodoFilters v-if="todos.length" :counter="todos.length" @updateFilter="handleUpdateFilters" />
+    <TodosList :todos="filteredTodos" @deleteTodo="handleDeleteTodo" @updateTodo="handleUpdateTodo" />
+    <TodoFilters v-if="todos.length" :counter="todos.length" />
   </div>
 </template>
