@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Message from '../components/Message.vue'
+import TitleMessage from '../components/TitleMessage.vue'
 </script>
 
 <template>
   <div class="container">
-    <Message msg="Todos web application" />
+    <TitleMessage msg="Todos web application" />
     <hr />
     <div class="options">
       <span class="option">Add</span>
