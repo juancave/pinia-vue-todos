@@ -14,6 +14,10 @@ const emit = defineEmits<{
 const onDeleteTodo = (todo: Todo) => {
   emit('deleteTodo', todo)
 }
+
+const onUpdateTodo = (todo: Todo) => {
+  emit('updateTodo', todo)
+}
 </script>
 
 <template>
@@ -24,7 +28,7 @@ const onDeleteTodo = (todo: Todo) => {
           :key="index"
           :todo="todo"
           @deleteTodo="onDeleteTodo"
-          @updateTodo="(todo) => emit('updateTodo', todo)"
+          @updateTodo="onUpdateTodo"
         />
       </div>
     </TransitionGroup>

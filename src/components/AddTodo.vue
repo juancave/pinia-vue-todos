@@ -9,6 +9,10 @@ const emit = defineEmits<{
 }>()
 
 const onAddTodo = () => {
+  if (text.value.trim().length < 5) {
+    return;
+  }
+  
   emit('addTodo', text.value)
   text.value = ''
 }

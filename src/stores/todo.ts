@@ -29,7 +29,11 @@ export const useTodos = defineStore('todos', () => {
     clearFilters()
   }
 
-  const filteredTodos = computed(() => todos.value.filter(({ status }) => filtersStore.filter === 'all' || status === filtersStore.filter))
+  const filteredTodos = computed(() =>
+    todos.value.filter(
+      ({ status }) => filtersStore.filter === 'all' || status === filtersStore.filter
+    )
+  )
 
   return {
     todos,

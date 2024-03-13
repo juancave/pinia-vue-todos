@@ -19,7 +19,7 @@ const onDeleteTodo = () => {
 }
 
 const onUpdateTodo = () => {
-  const updated = { ...props.todo, status: isChecked.value ? Status.completed : Status.in_progress }
+  const updated = { ...props.todo, status: isChecked.value ? Status.completed : Status.created }
   emit('updateTodo', updated)
 }
 </script>
